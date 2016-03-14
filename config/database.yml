@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: emoji_dev
+
+test:
+  <<: *default
+  database: emoji_test
+
+production:
+  <<: *default
+  database: emoji_prod
+  username: emoji
+  password: <%= ENV['EMOJI_DATABASE_PASSWORD'] %>

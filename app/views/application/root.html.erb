@@ -1,0 +1,2 @@
+<%= react_component('Header', prerender: true) %>
+<%= react_component('KitsPage', kits: ActiveModel::ArraySerializer.new(@kits,each_serializer: KitSerializer), prerender: true) %>
